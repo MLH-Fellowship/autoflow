@@ -1,5 +1,9 @@
 # Autoflow
-A CLI that will automate your project builds and repository initiations for you!
+![Open In Colab](https://img.shields.io/github/issues-closed/MLH-Fellowship/autoflow?color=blue&style=for-the-badge)
+![](https://img.shields.io/github/issues-pr-closed/MLH-Fellowship/autoflow?color=yellow&style=for-the-badge)
+
+
+ *A CLI that will automate your project builds and repository initiations for you!*
 
 ## Introduction 
 
