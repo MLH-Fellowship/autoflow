@@ -8,7 +8,7 @@ A CLI that will automate your project builds and repository initiations for you!
 
 
 ## An Example
-<Add screenshots here!>
+Add screenshots here!
 
 ## Tech Stack:
  - Python
