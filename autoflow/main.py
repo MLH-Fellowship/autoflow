@@ -34,7 +34,7 @@ def git(acc_token):
     os.system("git init")
     repo_link = git_obj.repo.clone_url
     os.system("git remote add origin "+repo_link)
-    readme_file = open("../best_readme_template.md","r")
+    readme_file = open("best_readme_template.md","r")
     readmetext = readme_file.read()
     git_obj.add_template_readme(readmetext)
     if (click.confirm("Let us add your teammates as collaborators!")):

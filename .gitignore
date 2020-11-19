@@ -1,4 +1,7 @@
 /env
+/af
+.env
+/test
 /.vscode
 /Autoflow.egg-info
 
