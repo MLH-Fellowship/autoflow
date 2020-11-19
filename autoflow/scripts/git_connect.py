@@ -10,4 +10,6 @@ class git_connect:
         repo_path = str(self.user.login)+"/"+repo_name
         self.repo = self.g.get_repo(repo_path)
     def add_colabs(self,colab_name):
-            self.repo.add_to_collaborators(colab_name,permission="push")
+        self.repo.add_to_collaborators(colab_name,permission="push")
+    def add_template_readme(self,readmetext):
+        self.repo.create_file("README.md","Create README.md",readmetext)

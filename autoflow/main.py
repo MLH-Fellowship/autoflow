@@ -1,4 +1,5 @@
 import click
+import os
 from autoflow.scripts.new import new
 from autoflow.scripts.git_connect import git_connect
 
@@ -22,10 +23,20 @@ def git(acc_token):
     if (click.confirm("Do you want to create a new repo?")):
         repo_name = click.prompt("Enter repo name",type=str)
         git_obj.create_repo(repo_name)
+        click.echo("Repository created at: "+git_obj.repo.html_url)
     else:
         if (click.confirm("Do you want to link to an existing repository?")):
             repo_name = click.prompt("Enter repo name",type=str)
             git_obj.existing_repo(repo_name)
+            click.echo("Linked to: "+git_obj.repo.html_url)
+        else:
+            click.echo("You have chosen not to link your project to Github. For version control I'll set up a local git project")
+    os.system("git init")
+    repo_link = git_obj.repo.clone_url
+    os.system("git remote add origin "+repo_link)
+    readme_file = open("../best_readme_template.md","r")
+    readmetext = readme_file.read()
+    git_obj.add_template_readme(readmetext)
     if (click.confirm("Let us add your teammates as collaborators!")):
         colab_name = click.prompt("Enter the Github handle of collaborator you want to add",type=str)
         git_obj.add_colabs(colab_name)
