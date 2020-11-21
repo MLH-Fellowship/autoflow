@@ -3,5 +3,9 @@
 /Autoflow.egg-info
 
 # for __pycache__
+/*/*/*/__pycache__
 /*/*/__pycache__
 /*/__pycache__
+
+#global config file
+af-config.json
