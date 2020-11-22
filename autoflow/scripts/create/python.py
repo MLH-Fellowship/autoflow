@@ -7,10 +7,10 @@ def create(projectDir,dependencies):
     os.mkdir(projectDir)
     os.chdir(projectDir)
     subprocess.run(['python','-m','venv','env'])
-    runCommand(bytes(f'. {projectDir}/env/bin/activate\n','utf-8'))
+    runCommand(f'. {projectDir}/env/bin/activate\n')
     if dependencies is not None:
         click.echo('🔥 Installing dependencies')
-        runCommand(bytes(f'pip install {dependencies}\n','utf-8'))
+        runCommand(f'pip install {dependencies}\n')
         proc.communicate()
     with open('app.py',"w") as file:
         file.close()

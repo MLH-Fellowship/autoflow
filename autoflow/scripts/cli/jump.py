@@ -9,11 +9,9 @@ def jump(dir):
     project = projectsDir + slash + dir
     try:
         os.chdir(project)
+        subprocess.run([f'gnome-terminal --tab'],shell=True)
     except:
         click.echo('😅 Project doesn\'t exists')
-
-    subprocess.run([f'gnome-terminal --tab'],shell=True)
-
 
 
 
