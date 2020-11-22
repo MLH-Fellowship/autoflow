@@ -1,9 +1,9 @@
 import os
-import subprocess
 import click
+import subprocess
 from autoflow.scripts.shell import shell
 from autoflow.env import projectsDir, slash
-from autoflow.scripts.create import python, react
+from autoflow.scripts.create import python, react, node
 
 #command to create new projects
 @click.command()
@@ -19,7 +19,12 @@ def new(language,name,dependencies):
             if 'python' in language:
                 python.create(projectDir,dependencies)
             elif 'react' in language:
-                react.create(name,projectDir)
+                react.create(name,projectsDir,dependencies)
+            elif 'node' in language:
+                node.create(projectDir,dependencies)
+            else:
+                click.echo('🤦 language not supported')
+                return
             click.echo('🔥 Project created')
             subprocess.run(['gnome-terminal --tab'],shell=True)
         else:

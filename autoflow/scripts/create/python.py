@@ -6,7 +6,7 @@ from autoflow.scripts.shell import proc, runCommand
 def create(projectDir,dependencies):
     os.mkdir(projectDir)
     os.chdir(projectDir)
-    subprocess.run(['python','-m','venv','env'])
+    subprocess.run(['python3','-m','venv','env'])
     runCommand(f'. {projectDir}/env/bin/activate\n')
     if dependencies is not None:
         click.echo('🔥 Installing dependencies')

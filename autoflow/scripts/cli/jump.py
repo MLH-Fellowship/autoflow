@@ -12,13 +12,3 @@ def jump(dir):
         subprocess.run([f'gnome-terminal --tab'],shell=True)
     except:
         click.echo('😅 Project doesn\'t exists')
-
-
-
-
-
-
-    # exec('../bin/e.sh')
-    # subprocess.run([shell],shell=True)
-    # subprocess.Popen(['e.sh'])
-    # subprocess.run([f'gnome-terminal --tab -- '],shell=True)

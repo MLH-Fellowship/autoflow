@@ -52,5 +52,4 @@ if not isFile:
 with open(configFilePath) as file:
     data = json.load(file)
     projectsDir = data['defaultDirectory']
-    os.chdir(projectsDir)
     file.close()
