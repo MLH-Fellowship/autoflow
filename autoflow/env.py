@@ -2,6 +2,7 @@ import os
 import json
 from pathlib import Path
 from autoflow.defaults import defaultDirectory, defaultTextEditor
+from autoflow import readme_template
 
 #selects slash type depending on OS
 slash = ''
@@ -52,4 +53,10 @@ if not isFile:
 with open(configFilePath) as file:
     data = json.load(file)
     projectsDir = data['defaultDirectory']
+    github_token = data['github_token']
+    file.close()
+
+readmePath = configFolder + slash + "readme_template.md"
+with open(readmePath,"w") as file:
+    file.write(readme_template.readmetext)
     file.close()
