@@ -9,6 +9,8 @@ setup(
     include_package_data=True,
     install_requires=[
         'Click',
+        'PyGithub',
+        'gitpython'
     ],
     entry_points={
         'console_scripts': [
