@@ -1,7 +1,8 @@
 import os
 import click
 import subprocess
-from autoflow.scripts.shell import shell
+from sys import platform
+from autoflow.scripts.mactab import openTab
 from autoflow.env import projectsDir, slash
 from autoflow.scripts.create import python, react, node
 
@@ -26,7 +27,10 @@ def new(language,name,dependencies):
                 click.echo('🤦 language not supported')
                 return
             click.echo('🔥 Project created')
-            subprocess.run(['gnome-terminal --tab'],shell=True)
+            if platform == "linux" or platform == "linux2":
+                subprocess.run([f'gnome-terminal --tab'],shell=True)
+            elif platform == "darwin":
+                openTab()
         else:
             click.echo('👉👈Project already exists')
     except:
