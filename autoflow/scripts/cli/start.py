@@ -8,6 +8,9 @@ from autoflow.scripts.shell import runCommand, proc
 @click.command()
 @click.argument('dir',type=click.STRING)
 def start(dir):
+    """
+    Starts an existing project
+    """
     project = projectsDir + slash + dir
     if os.path.isdir(project):
         os.chdir(project)

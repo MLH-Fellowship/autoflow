@@ -8,6 +8,9 @@ from autoflow.env import projectsDir, slash
 @click.command()
 @click.argument('dir',type=click.STRING)
 def jump(dir):
+    """
+    Jumps to your specified project directory
+    """
     project = projectsDir + slash + dir
     try:
         os.chdir(project)

@@ -6,16 +6,29 @@ from autoflow.env import github_token,readmePath
 # the main entry point for entry command
 @click.group()
 def main():
+    """
+    Welcome to Autoflow, the command-line tool that automates all of your project
+    initializations and project setups!
+
+    We currently support macOS and Windows. The project types we support are Python, Node,
+    and React. 
+    """
     pass
 
 # a random command
 @click.command()
 def hello():
+    """
+    Test click
+    """
     click.echo('Hello')
 
 # commands for github
 @click.command()
 def git_cli():
+    """
+    Initializes a git repository in your desired directory
+    """
     # click.echo("git")
     click.echo('Taking your Access token from the current env...')
     git_obj = git_connect(github_token)
