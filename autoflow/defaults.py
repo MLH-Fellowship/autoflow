@@ -1,9 +1,8 @@
 from pathlib import Path
-import os
 
 # defines home as default directory for projects
-if 'GITHUB_WORKSPACE' in os.environ:
-    defaultDirectory = '${{GITHUB_WORKSPACE}}'
+if str(Path.home()) == '/home/runner':
+    defaultDirectory == '/home/runner/work/autoflow/autoflow'
 else:
     defaultDirectory = str(Path.home())
 # defines nano as default editor for projects
