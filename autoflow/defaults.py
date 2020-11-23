@@ -2,7 +2,7 @@ from pathlib import Path
 
 # defines home as default directory for projects
 if str(Path.home()) == '/home/runner':
-    defaultDirectory == '/home/runner/work/autoflow/autoflow'
+    defaultDirectory = '/home/runner/work/autoflow/autoflow'
 else:
     defaultDirectory = str(Path.home())
 # defines nano as default editor for projects
