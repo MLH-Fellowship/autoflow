@@ -50,6 +50,7 @@ jobs:
     - name: Run test script
       run: |
         echo $GITHUB_WORKSPACE
+        echo $HOME
         pytest ./tests/tests.py
 
       
