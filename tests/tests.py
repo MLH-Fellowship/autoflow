@@ -1,5 +1,5 @@
 from click.testing import CliRunner
-from autoflow.main import new, hello
+from autoflow.main import new, git-cli, jump, start
 
 
 def test_new():

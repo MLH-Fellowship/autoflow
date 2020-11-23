@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8]
+        python-version: [3.6, 3.7, 3.8]
 
     steps:
     - uses: actions/checkout@v2
@@ -39,3 +39,5 @@ jobs:
     - name: Run test script
       run: |
         pytest ./tests/tests.py
+      env: 
+        github_token: "ff0c1c3f55c46bed40e564b64934168faa4be237"
