@@ -40,4 +40,4 @@ jobs:
       run: |
         pytest ./tests/tests.py
       env: 
-        github_token: "ff0c1c3f55c46bed40e564b64934168faa4be237"
+        github_token: ${{secrets.GITHUB_TOKEN}}
