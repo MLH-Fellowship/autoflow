@@ -45,6 +45,7 @@ jobs:
           @app.route('/')
           def hello_world():
             return 'Hello, World!'" >> myproject/app.py
+        ls myproject
     - name: Run test script
       run: |
         pytest ./tests/tests.py
