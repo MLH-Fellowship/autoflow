@@ -1,6 +1,10 @@
 from click.testing import CliRunner
 from autoflow.main import new, git_cli, jump, start
 import os
+from pynput.keyboard import Key, Controller
+
+# Start keyboard
+keyboard = Controller()
 
 # Start: Test incorrect usage
 def test_start_wrong():
@@ -65,7 +69,7 @@ def test_new_react_nodep():
 # New: test normal usage with node, no dependencies
 def test_new_node_nodep():
     runner = CliRunner()
-    result = runner.invoke(new.new, ['-l', 'node', '-n', 'newproject2'])
+    result = runner.invoke(new.new, ['-l', 'node', '-n', 'newproject2'], input=keyboard.press(Key.enter))
     assert os.getcwd() == '/home/runner/work/autoflow/autoflow/newproject2'
     assert os.listdir('.') == 'package.json'
 
