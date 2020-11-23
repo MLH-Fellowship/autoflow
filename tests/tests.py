@@ -66,7 +66,7 @@ def test_new_react_nodep():
 # New: test normal usage with node, no dependencies
 def test_new_node_nodep():
     runner = CliRunner()
-    result = runner.invoke(new.new, ['-l', 'node', '-n', 'newproject2'], input=keyboard.press(Key.enter))
+    result = runner.invoke(new.new, ['-l', 'node', '-n', 'newproject2'])
     assert os.getcwd() == '/home/runner/work/autoflow/autoflow/newproject2'
 
 
