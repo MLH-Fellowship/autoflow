@@ -10,12 +10,12 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  python-build:
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8]
+        python-version: [3.5, 3.6, 3.7, 3.8]
 
     steps:
     - uses: actions/checkout@v2
@@ -45,12 +45,19 @@ jobs:
           @app.route('/')
           def hello_world():
             return 'Hello, World!'" >> myproject/app.py
-        cd myproject
-        pwd
+        mkdir myproject2
+        echo "from flask import Flask
+          app = Flask(__name__)
+
+          @app.route('/')
+          def hello_world():
+            return 'Hello, World!'" >> myproject2/app.py 
+        echo "{
+          "type": "python",
+          "command": "flask run"
+        }" >> myproject2/af-config.json
     - name: Run test script
       run: |
-        echo $GITHUB_WORKSPACE
-        echo $HOME
         pytest ./tests/tests.py
 
       

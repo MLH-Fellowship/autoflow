@@ -21,6 +21,9 @@ def test_start_proj_noconfig():
 
 # Start: test when both the project and local configuration file exists
 # Tested manually and not through unit tests
+def test_start_proj_config():
+    runner = CliRunner()
+    result = runner.invoke(start.start, ['myproject2'])
 
 # Git-cli: test command normally used
 #def test_gitcli():
