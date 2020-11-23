@@ -16,7 +16,7 @@ def test_start_noproj():
 # Start: test when project exists but af-config.json doesn't
 def test_start_proj_noconfig():
     runner = CliRunner()
-    result = runner.invoke(start.start, ['example_noconfig'])
+    result = runner.invoke(start.start, ['myproject'])
     assert result.output.rstrip('\n') == "🤦 af-config.json doesn't exists"
 
 # Start: test when both the project and local configuration file exists
