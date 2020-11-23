@@ -40,7 +40,7 @@ def test_jump_existing():
 def test_jump_nonexisting():
     runner = CliRunner()
     result = runner.invoke(jump.jump, ['example'])
-    assert result.output.rstrip('\n') == "🤦 af-config.json doesn't exists"
+    assert result.output.rstrip('\n') == "😅 Project doesn't exists"
 
 # Jump: test incorrect usage
 def test_jump_wrong():
@@ -52,7 +52,7 @@ def test_jump_wrong():
 def test_new_python_nodep():
     runner = CliRunner()
     result = runner.invoke(new.new, ['-l', 'python', '-n', 'newproject'])
-    assert result.output.rstrip('\n') == '🔥 Creating your awesome project\n🔥 Project created\n'
+    assert result.output.rstrip('\n') == '🔥 Creating your awesome project\n🔥 Project created'
     assert os.getcwd() == '/home/runner/work/autoflow/autoflow/newproject'
 
 # New: test normal usage with react, no dependencies
@@ -60,7 +60,7 @@ def test_new_react_nodep():
     runner = CliRunner()
     result = runner.invoke(new.new, ['-l', 'react', '-n', 'newproject1'])
     assert os.getcwd() == '/home/runner/work/autoflow/autoflow/newproject1'
-    assert os.listdir('.') == 'README.md\npackage-lock.json\npublic\nnode_modules\npackage.json\nsrc'
+    assert os.listdir('.') == ['package.json', 'node_modules', 'src', 'README.md', 'yarn.lock', 'public', '.gitignore']
 
 # New: test normal usage with node, no dependencies
 def test_new_node_nodep():

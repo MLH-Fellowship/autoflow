@@ -29,6 +29,7 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         pip install click
+        sudo apt-get install gnome-terminal
         pip install --editable .
     - name: Lint with flake8
       run: |
@@ -57,7 +58,6 @@ jobs:
           "command": "flask run"
         }" >> myproject2/af-config.json
     - name: Run test script
-      run: |
-        pytest ./tests/tests.py -vv
+      run: pytest ./tests/tests.py -vv
 
       
