@@ -5,7 +5,7 @@ from autoflow.main import new, git_cli, jump, start
 def test_start_wrong():
     runner = CliRunner()
     result = runner.invoke(start.start)
-    assert result.output.rstrip('\n') == 'Usage: start [OPTIONS] DIR\nTry "start --help" for help.\n\nError: Missing argument "DIR".'
+    assert result.output.rstrip('\n') == "Usage: start [OPTIONS] DIR\nTry 'start --help' for help.\n\nError: Missing argument 'DIR'."
 
 # Start: test when the project doesn't exist
 def test_start_noproj():
