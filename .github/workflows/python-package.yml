@@ -38,7 +38,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run test script
       run: |
-        pytest ./tests/tests.py::test_start_proj_noconfig
+        pytest ./tests/tests.py
       working-directory: ./tests/test_examples/
 
       
