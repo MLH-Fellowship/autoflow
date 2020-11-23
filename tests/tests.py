@@ -28,7 +28,8 @@ def test_start_proj_config():
 # Git-cli: test command normally used
 def test_gitcli():
     runner = CliRunner()
-    result = runner.invoke(git_cli, ['y', 'myproject', 'N'])
-    assert result.output == ''
+    result = runner.invoke(git_cli, input = 'y\nmyproject\nN')
+    assert not result.exception
+    assert result.exit_code == 0
 
 
