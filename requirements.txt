@@ -1,0 +1,13 @@
+certifi==2020.11.8
+chardet==3.0.4
+click==7.1.2
+Deprecated==1.2.10
+gitdb==4.0.5
+GitPython==3.1.11
+idna==2.10
+PyGithub==1.53
+PyJWT==1.7.1
+requests==2.25.0
+smmap==3.0.4
+urllib3==1.26.2
+wrapt==1.12.1
