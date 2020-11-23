@@ -1,7 +1,6 @@
 from click.testing import CliRunner
 from autoflow.main import new, git_cli, jump, start
 import os
-from pynput.keyboard import Key, Controller
 
 # Start keyboard
 keyboard = Controller()
