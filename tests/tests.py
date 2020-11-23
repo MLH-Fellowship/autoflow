@@ -2,8 +2,6 @@ from click.testing import CliRunner
 from autoflow.main import new, git_cli, jump, start
 import os
 
-# Start keyboard
-keyboard = Controller()
 
 # Start: Test incorrect usage
 def test_start_wrong():
