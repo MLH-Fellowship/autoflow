@@ -29,6 +29,7 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         pip install click
+        pip3 install pynput
         sudo apt-get install gnome-terminal
         pip install --editable .
     - name: Lint with flake8
