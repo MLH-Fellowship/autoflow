@@ -16,7 +16,7 @@ def main():
     pass
 
 # a random command
-@click.command()
+@click.command(name='hello')
 def hello():
     """
     Test click
@@ -24,7 +24,7 @@ def hello():
     click.echo('Hello')
 
 # commands for github
-@click.command()
+@click.command(name='git-cli')
 def git_cli():
     """
     Initializes a git repository in your desired directory

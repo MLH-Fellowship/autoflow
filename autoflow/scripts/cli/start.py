@@ -5,7 +5,7 @@ import click
 from autoflow.env import projectsDir, slash
 from autoflow.scripts.shell import runCommand, proc
 
-@click.command()
+@click.command(name='start')
 @click.argument('dir',type=click.STRING)
 def start(dir):
     """
