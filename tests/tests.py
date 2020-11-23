@@ -23,13 +23,11 @@ def test_start_proj_noconfig():
 def test_start_proj_config():
     runner = CliRunner()
     result = runner.invoke(start.start, ['myproject2'])
-    assert result.exit_code == 0
 
 # Git-cli: test command normally used
 def test_gitcli():
     runner = CliRunner()
     result = runner.invoke(git_cli, input = 'y\nmyproject\nN')
-    assert not result.exception
-    assert result.exit_code == 0
+    assert result.exception == BadCredentialsException()
 
 
