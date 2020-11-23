@@ -45,10 +45,11 @@ jobs:
           @app.route('/')
           def hello_world():
             return 'Hello, World!'" >> myproject/app.py
-        ls myproject
+        cd myproject
+        pwd
     - name: Run test script
       run: |
-        ls myproject
+        echo $GITHUB_WORKSPACE
         pytest ./tests/tests.py
 
       
