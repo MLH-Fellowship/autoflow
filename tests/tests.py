@@ -20,7 +20,8 @@ def test_start_proj_noconfig():
     result = runner.invoke(start.start, ['myproject'])
     assert result.output.rstrip('\n') == "🤦 af-config.json doesn't exists"
 
-# Start: test when both the project and local configuration file exists
+# Start: test when both the project and local configuration file exists, check if invoked
+# Testing locally using commands is better to see output
 def test_start_proj_config():
     runner = CliRunner()
     result = runner.invoke(start.start, ['myproject2'])
@@ -35,5 +36,37 @@ def test_jump_existing():
     assert result.exit_code == 0
     assert os.getcwd() == '/home/runner/work/autoflow/autoflow/myproject2'
 
+# Jump: test with non-existing project
+def test_jump_nonexisting():
+    runner = CliRunner()
+    result = runner.invoke(jump.jump, ['example'])
+    assert result.output.rstrip('\n') == "🤦 af-config.json doesn't exists"
+
+# Jump: test incorrect usage
+def test_jump_wrong():
+    runner = CliRunner()
+    result = runner.invoke(jump.jump)
+    assert result.output.rstrip('\n') == "Usage: jump [OPTIONS] DIR\nTry 'jump --help' for help.\n\nError: Missing argument 'DIR'."
+
+# New: test normal usage with python, no dependencies
+def test_new_python_nodep():
+    runner = CliRunner()
+    result = runner.invoke(new.new, ['-l', 'python', '-n', 'newproject'])
+    assert result.output.rstrip('\n') == '🔥 Creating your awesome project\n🔥 Project created\n'
+    assert os.getcwd() == '/home/runner/work/autoflow/autoflow/newproject'
+
+# New: test normal usage with react, no dependencies
+def test_new_react_nodep():
+    runner = CliRunner()
+    result = runner.invoke(new.new, ['-l', 'react', '-n', 'newproject1'])
+    assert os.getcwd() == '/home/runner/work/autoflow/autoflow/newproject1'
+    assert os.listdir('.') == 'README.md\npackage-lock.json\npublic\nnode_modules\npackage.json\nsrc'
+
+# New: test normal usage with node, no dependencies
+def test_new_node_nodep():
+    runner = CliRunner()
+    result = runner.invoke(new.new, ['-l', 'node', '-n', 'newproject2'])
+    assert os.getcwd() == '/home/runner/work/autoflow/autoflow/newproject2'
+    assert os.listdir('.') == 'package.json'
 
 

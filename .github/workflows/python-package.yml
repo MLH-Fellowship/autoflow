@@ -58,6 +58,6 @@ jobs:
         }" >> myproject2/af-config.json
     - name: Run test script
       run: |
-        pytest ./tests/tests.py
+        pytest ./tests/tests.py -vv
 
       
