@@ -1,5 +1,6 @@
 from click.testing import CliRunner
 from autoflow.main import new, git_cli, jump, start
+import os
 
 # Start: Test incorrect usage
 def test_start_wrong():
@@ -25,9 +26,14 @@ def test_start_proj_config():
     result = runner.invoke(start.start, ['myproject2'])
 
 # Git-cli: test command normally used
-def test_gitcli():
+# This should be tested locally, and not within Github Actions due to credentials
+
+# Jump: test normal af jump with existing repository
+def test_jump_existing():
     runner = CliRunner()
-    result = runner.invoke(git_cli, input = 'y\nmyproject\nN')
-    assert result.exception == BadCredentialsException()
+    result = runner.invoke(jump.jump, ['myproject2'])
+    assert result.exit_code == 0
+    assert os.getcwd() == '/home/runner/work/autoflow/autoflow/myproject2'
+
 
 
