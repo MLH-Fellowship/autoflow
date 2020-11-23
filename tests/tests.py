@@ -20,13 +20,15 @@ def test_start_proj_noconfig():
     assert result.output.rstrip('\n') == "🤦 af-config.json doesn't exists"
 
 # Start: test when both the project and local configuration file exists
-# Tested manually and not through unit tests
 def test_start_proj_config():
     runner = CliRunner()
     result = runner.invoke(start.start, ['myproject2'])
+    assert result.exit_code == 0
 
 # Git-cli: test command normally used
-#def test_gitcli():
-    #runner = CliRunner()
-    #result = runner.invoke(git_cli, ['y', ])
+def test_gitcli():
+    runner = CliRunner()
+    result = runner.invoke(git_cli, ['y', 'myproject', 'N'])
+    assert result.exit_code == 0
+
 
