@@ -71,6 +71,5 @@ def test_new_node_nodep():
     runner = CliRunner()
     result = runner.invoke(new.new, ['-l', 'node', '-n', 'newproject2'], input=keyboard.press(Key.enter))
     assert os.getcwd() == '/home/runner/work/autoflow/autoflow/newproject2'
-    assert os.listdir('.') == 'package.json'
 
 
