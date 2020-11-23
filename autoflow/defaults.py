@@ -4,3 +4,5 @@ from pathlib import Path
 defaultDirectory = str(Path.home())
 #defines nano as default editor for projects
 defaultTextEditor = 'nano'
+#defines a secret token from Github for github token
+github_token = '${{secrets.GITHUB_TOKEN}}'

@@ -1,7 +1,7 @@
 import os
 import json
 from pathlib import Path
-from autoflow.defaults import defaultDirectory, defaultTextEditor
+from autoflow.defaults import defaultDirectory, defaultTextEditor, github_token
 from autoflow import readme_template
 
 #selects slash type depending on OS
@@ -26,7 +26,8 @@ configFilePath = configFolder + slash + configFileName
 #creates a dict for default data
 defaultData = {
     'defaultDirectory': defaultDirectory,
-    'defaultTextEditor': defaultTextEditor
+    'defaultTextEditor': defaultTextEditor,
+    'github_token': github_token
 }
 
 #contains the default directory of projects
