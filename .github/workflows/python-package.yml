@@ -32,8 +32,6 @@ jobs:
         python-version: ${{ matrix.python }}
     - name: Install dependencies
       run: |
-        pip install -U wheel
-        pip install -U setuptools
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
@@ -50,18 +48,12 @@ jobs:
         mkdir myproject
         echo "from flask import Flask
           app = Flask(__name__)
-
           @app.route('/')
           def hello_world():
             return 'Hello, World!'" >> myproject/app.py
-        cd myproject
-        pwd
-        cd ..
-        pwd
         mkdir myproject2
         echo "from flask import Flask
           app = Flask(__name__)
-
           @app.route('/')
           def hello_world():
             return 'Hello, World!'" >> myproject2/app.py 
@@ -69,20 +61,8 @@ jobs:
           "type": "python",
           "command": "flask run"
         }" >> myproject2/af-config.json
-        cd myproject2
-        pwd
-        cd ..
-        pwd
     - name: Run test script
       run: |
-        cd myproject
-        pwd
-        cd ..
-        pwd
-        cd myproject2
-        pwd
-        cd ..
-        pwd
         pytest ./tests/tests.py -vv
 
       
