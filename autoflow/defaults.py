@@ -4,7 +4,7 @@ from pathlib import Path
 if str(Path.home()) == '/home/runner':
     defaultDirectory = '/home/runner/work/autoflow/autoflow'
 elif str(Path.home()) == '/Users/runner':
-    defaultDirectory == '/Users/runner/work/autoflow/autoflow'
+    defaultDirectory = '/Users/runner/work/autoflow/autoflow'
 else:
     defaultDirectory = str(Path.home())
 # defines nano as default editor for projects
