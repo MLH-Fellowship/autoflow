@@ -35,7 +35,7 @@ def test_jump_existing():
     runner = CliRunner()
     result = runner.invoke(jump.jump, ['myproject2'])
     assert result.exit_code == 0
-    assert os.getcwd() == '/home/runner/work/autoflow/autoflow/myproject2'
+    assert os.getcwd() == os.path.expandvars('$GITHUB_WORKSPACE/myproject2')
 
 # Jump: test with non-existing project
 def test_jump_nonexisting():
