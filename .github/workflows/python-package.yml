@@ -54,11 +54,11 @@ jobs:
           @app.route('/')
           def hello_world():
             return 'Hello, World!'" >> myproject/app.py
-        cd myproject1
+        cd myproject
         pwd
         cd ..
         pwd
-        mkdir myproject2
+        mkdir myproject1
         echo "from flask import Flask
           app = Flask(__name__)
 
