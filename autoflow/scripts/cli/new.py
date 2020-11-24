@@ -8,7 +8,7 @@ from autoflow.scripts.create import python, react, node
 
 #command to create new projects
 @click.command()
-@click.option('--language','-l',type=click.STRING,required=True, help = 'Desired project type or language(Python, Node, React)')
+@click.option('--language','-l',type=click.STRING,required=True, help = 'Desired project type/language')
 @click.option('--name','-n',type=click.STRING,required=True, help = 'Desired project name')
 @click.option('--dependencies','-d',type=click.STRING, help = 'Desired project dependencies')
 def new(language,name,dependencies):

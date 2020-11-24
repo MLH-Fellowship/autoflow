@@ -7,11 +7,43 @@ from autoflow.env import github_token,readmePath
 @click.group()
 def main():
     """
-    Welcome to Autoflow, the command-line tool that automates all of your project
+    Welcome to 🔥 Autoflow 🔥, the command-line tool that automates all of your project
     initializations and project setups!
 
-    We currently support macOS and Windows. The project types we support are Python, Node,
-    and React. 
+    We currently support macOS and Linux. The project types we support are Python, Node,
+    and React. The Python versions we support are 3.6, 3.7, and 3.8.
+
+    Once you install Autoflow on your machine, be sure to configure your global Autoflow
+    configuration file with the path to your default project directory, the text editor you
+    normally use, and your Github personal access token that you can generate at www.github.com.
+    
+    You can access the global configuration file by installing this package and changing your
+    current working directory to .autoflow by using 'cd ~/.autoflow' There is a default af-config.json
+    already there with these configurations:
+
+    \b
+        {
+            "defaultDirectory": Path.home()
+            "defaultTextEditor": "nano",
+            "github_token": "${{ secrets.GITHUB_TOKEN }}"
+        }
+
+    The configuration for the github token is just for testing purposes. You will need to replace that configuration with
+    your own access token. 
+
+    Be sure to also configure a local configuration file for each project you have by opening an af-config.json
+    in your project folder. Have this data filled in in your file:
+
+    \b
+        {
+            "type": "<project type>",
+            "command": "<start server command for project>"
+        }
+
+    When you use our 'af start' command for your project, it will read off this file 
+    to start the backend for your project and directly open your project. 
+
+    Have a great time hacking!
     """
     pass
 
@@ -28,6 +60,8 @@ def hello():
 def git_cli():
     """
     Initializes a git repository in your desired directory
+
+    Must be in the desired directory to use this command
     """
     # click.echo("git")
     click.echo('Taking your Access token from the current env...')

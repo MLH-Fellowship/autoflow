@@ -10,6 +10,8 @@ from autoflow.env import projectsDir, slash
 def jump(dir):
     """
     Jumps to your specified project directory
+
+    DIR is the name of the project directory
     """
     project = projectsDir + slash + dir
     try:
@@ -20,4 +22,4 @@ def jump(dir):
             openTab()
 
     except:
-        click.echo('😅 Project doesn\'t exists')
+        click.echo('😅 Project doesn\'t exist')

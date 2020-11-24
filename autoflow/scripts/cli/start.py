@@ -10,6 +10,10 @@ from autoflow.scripts.shell import runCommand, proc
 def start(dir):
     """
     Starts an existing project
+
+    DIR is the name of the project directory. 
+    
+    Must be outside of the project directory in order to start it. 
     """
     project = projectsDir + slash + dir
     if os.path.isdir(project):
@@ -34,4 +38,4 @@ def start(dir):
         else:
             click.echo('🤦 af-config.json doesn\'t exists')
     else:
-        click.echo('😅 Project doesn\'t exists')
+        click.echo('😅 Project doesn\'t exist')
