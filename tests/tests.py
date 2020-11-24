@@ -69,4 +69,6 @@ def test_new_node_nodep():
     result = runner.invoke(new.new, ['-l', 'node', '-n', 'newproject2'])
     assert os.getcwd() == '/home/runner/work/autoflow/autoflow/newproject2'
 
-
+##
+# Rest of options for 'af new' should be tested locally, in a virtual environment in order for proper
+# configuration of projects and proper output given.
