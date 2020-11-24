@@ -54,20 +54,20 @@ def test_new_python_nodep():
     runner = CliRunner()
     result = runner.invoke(new.new, ['-l', 'python', '-n', 'newproject'])
     assert result.output.rstrip('\n') == '🔥 Creating your awesome project\n🔥 Project created'
-    assert os.getcwd() == '/home/runner/work/autoflow/autoflow/newproject'
+    assert os.getcwd() == os.path.expandvars('$GITHUB_WORKSPACE/newproject')
 
 # New: test normal usage with react, no dependencies
 def test_new_react_nodep():
     runner = CliRunner()
     result = runner.invoke(new.new, ['-l', 'react', '-n', 'newproject1'])
-    assert os.getcwd() == '/home/runner/work/autoflow/autoflow/newproject1'
+    assert os.getcwd() == os.path.expandvars('$GITHUB_WORKSPACE/newproject1')
     assert os.listdir('.') == ['package.json', 'node_modules', 'src', 'README.md', 'yarn.lock', 'public', '.gitignore']
 
 # New: test normal usage with node, no dependencies
 def test_new_node_nodep():
     runner = CliRunner()
     result = runner.invoke(new.new, ['-l', 'node', '-n', 'newproject2'])
-    assert os.getcwd() == '/home/runner/work/autoflow/autoflow/newproject2'
+    assert os.getcwd() == os.path.expandvars('$GITHUB_WORKSPACE/newproject2')
 
 ##
 # Rest of options for 'af new' should be tested locally, in a virtual environment in order for proper
