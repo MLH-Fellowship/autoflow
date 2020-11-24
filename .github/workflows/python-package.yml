@@ -38,8 +38,6 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         pip install click
-        sudo apt-get install gnome-terminal
-        brew install gnome-terminal
         pip install --editable .
     - name: Lint with flake8
       run: |
