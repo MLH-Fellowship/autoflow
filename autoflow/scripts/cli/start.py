@@ -36,6 +36,6 @@ def start(dir):
                     else:
                         subprocess.run([command],shell=True)
         else:
-            click.echo('🤦 af-config.json doesn\'t exists')
+            click.echo('🤦 af-config.json doesn\'t exist')
     else:
         click.echo('😅 Project doesn\'t exist')

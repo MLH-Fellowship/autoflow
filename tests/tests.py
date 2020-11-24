@@ -14,13 +14,13 @@ def test_start_wrong():
 def test_start_noproj():
     runner = CliRunner()
     result = runner.invoke(start.start, ['testproj'])
-    assert result.output.rstrip('\n') == "😅 Project doesn't exists"
+    assert result.output.rstrip('\n') == "😅 Project doesn't exist"
 
 # Start: test when project exists but af-config.json doesn't
 def test_start_proj_noconfig():
     runner = CliRunner()
     result = runner.invoke(start.start, ['myproject'])
-    assert result.output.rstrip('\n') == "🤦 af-config.json doesn't exists"
+    assert result.output.rstrip('\n') == "🤦 af-config.json doesn't exist"
 
 # Start: test when both the project and local configuration file exists, check if invoked
 # Testing locally using commands is better to see output
@@ -42,7 +42,7 @@ def test_jump_existing():
 def test_jump_nonexisting():
     runner = CliRunner()
     result = runner.invoke(jump.jump, ['example'])
-    assert result.output.rstrip('\n') == "😅 Project doesn't exists"
+    assert result.output.rstrip('\n') == "😅 Project doesn't exist"
 
 # Jump: test incorrect usage
 def test_jump_wrong():
