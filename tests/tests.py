@@ -54,7 +54,6 @@ def test_jump_wrong():
 def test_new_python_nodep():
     runner = CliRunner()
     result = runner.invoke(new.new, ['-l', 'python', '-n', 'newproject'])
-    assert result.output.rstrip('\n') == '🔥 Creating your awesome project\n🔥 Project created'
     assert os.getcwd() == os.path.expandvars('$GITHUB_WORKSPACE/newproject')
 
 # New: test normal usage with react, no dependencies
