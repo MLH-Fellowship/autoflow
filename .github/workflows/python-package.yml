@@ -74,6 +74,15 @@ jobs:
         cd ..
         pwd
     - name: Run test script
-      run: pytest ./tests/tests.py -vv
+      run: |
+      cd myproject
+      pwd
+      cd ..
+      pwd
+      cd myproject2
+      pwd
+      cd ..
+      pwd
+      pytest ./tests/tests.py -vv
 
       
