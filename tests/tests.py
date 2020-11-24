@@ -1,6 +1,7 @@
 from click.testing import CliRunner
 from autoflow.main import new, git_cli, jump, start
 import os
+import collections 
 
 
 # Start: Test incorrect usage
@@ -61,7 +62,7 @@ def test_new_react_nodep():
     runner = CliRunner()
     result = runner.invoke(new.new, ['-l', 'react', '-n', 'newproject1'])
     assert os.getcwd() == os.path.expandvars('$GITHUB_WORKSPACE/newproject1')
-    assert os.listdir('.') == ['package.json', 'node_modules', 'src', 'README.md', 'yarn.lock', 'public', '.gitignore']
+    assert collections.Counter(os.listdir('.')) == collections.Counter(['package.json', 'node_modules', 'src', 'README.md', 'yarn.lock', 'public', '.gitignore'])
 
 # New: test normal usage with node, no dependencies
 def test_new_node_nodep():

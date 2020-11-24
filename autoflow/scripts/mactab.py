@@ -10,9 +10,11 @@ def osascript(scpt):
 def openTab():
     script = f"""
             tell application "System Events"
+                with timeout of 300 seconds
                 tell process "Terminal" to keystroke "t" using command down
             end
             tell application "Terminal"
+                with timeout of 300 seconds
                 activate
                 do script with command "cd {os.getcwd()}" in window 1
             end tell
