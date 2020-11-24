@@ -54,6 +54,10 @@ jobs:
           @app.route('/')
           def hello_world():
             return 'Hello, World!'" >> myproject/app.py
+        cd myproject1
+        pwd
+        cd ..
+        pwd
         mkdir myproject2
         echo "from flask import Flask
           app = Flask(__name__)
@@ -65,6 +69,10 @@ jobs:
           "type": "python",
           "command": "flask run"
         }" >> myproject2/af-config.json
+        cd myproject2
+        pwd
+        cd ..
+        pwd
     - name: Run test script
       run: pytest ./tests/tests.py -vv
 
