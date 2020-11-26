@@ -99,8 +99,9 @@ We will also be using releases to keep track of our versions. Our version releas
  - Setting up CI/CD with GitHub Actions
  - Building a CLI with Python
  - Publishing a package to PyPi
- - Using the GitHub API
- - Asking for help from our MLH mentors! 
+ - Using the GitHub API for our CLI
+ 
+ In regards to soft skills, we learned to ask for help from our MLH mentors instead of trying to solve problems with little success. 
 
 ## 🔥 Contributing
 Autoflow is fully Open-Source and open for contributions! We request you to respect our contribution guidelines as defined in our [CODE OF CONDUCT](https://github.com/MLH-Fellowship/autoflow/blob/main/CODE_OF_CONDUCT.md) and [CONTRIBUTING GUIDELINES](https://github.com/MLH-Fellowship/autoflow/blob/main/CONTRIBUTING.md).
