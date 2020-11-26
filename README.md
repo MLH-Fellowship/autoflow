@@ -93,9 +93,14 @@ GitHub actions allowed us to run multiple builds with multiple operating systems
 We will also be using releases to keep track of our versions. Our version released on November 24th will be version 1. 
 
 ## 🔥 What We Learned
-We learned a lot about subprocesses in Python in order to open shells and navigate to different folders. We also learned about testing with pytest, linting with flake8, and setting up CI/CD with GitHub Actions. Finally, we learned how to build a CLI, publish a Python package, and use the GitHub API. 
-
-In regards to soft skills, we learned about asking for help from mentors rather than trying to solve problems all by ourselves with little success. 
+ - Subprocesses in Python
+ - Testing with pytest
+ - Linting with flake8
+ - Setting up CI/CD with GitHub Actions
+ - Building a CLI with Python
+ - Publishing a package to PyPi
+ - Using the GitHub API
+ - Asking for help from our MLH mentors! 
 
 ## 🔥 Contributing
 Autoflow is fully Open-Source and open for contributions! We request you to respect our contribution guidelines as defined in our [CODE OF CONDUCT](https://github.com/MLH-Fellowship/autoflow/blob/main/CODE_OF_CONDUCT.md) and [CONTRIBUTING GUIDELINES](https://github.com/MLH-Fellowship/autoflow/blob/main/CONTRIBUTING.md).
