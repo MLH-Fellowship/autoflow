@@ -86,20 +86,20 @@ This will give you everything you need to start using this package and is simila
 
 ## An Example
 
-#### Command: *af jump*
+#### 🔥 Command: *af jump*
 
 ![autoflow git-cli](https://github.com/MLH-Fellowship/autoflow/blob/main/screenshots/jump.gif)
 
 
-#### Command: *af new*
+#### 🔥 Command: *af new*
 
 ![autoflow git-cli](https://github.com/MLH-Fellowship/autoflow/blob/main/screenshots/new.gif)
 
-#### Command: *af start*
+#### 🔥 Command: *af start*
 
 ![autoflow git-cli](https://github.com/MLH-Fellowship/autoflow/blob/main/screenshots/start.gif)
 
-#### Command: *af git-cli*
+#### 🔥 Command: *af git-cli*
 
 ![autoflow git-cli](https://github.com/MLH-Fellowship/autoflow/blob/main/screenshots/git-cli.gif)
 
