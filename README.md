@@ -20,41 +20,16 @@ Using this CLI, you will be able to use your time more productively by working t
    
 ## Get Started
 
-### 1. First, let's clone the repository:
-```
-git clone https://github.com/MLH-Fellowship/autoflow.git
-```
+### Let's install our package!
 
-### 2. Next, let's make sure we have a virtual environment set up. 
+```pip install python-af```
 
-If you're on Mac OS or Linux, either use:
-```
-sudo easy_install virtualenv
-```
 or
-```
-pip install virtualenv --user
-```
 
-If you're on Ubuntu, try:
-```
-sudo apt-get install python-virtualenv
-```
+```pip3 install python-af```
 
-### 3. Then we can move into our autoflow folder and start our virtualenv:
-```
-cd autoflow
-virtualenv venv
-. venv/bin/activate
-```
+### There's also one configuration that needs to be done. First, move to the package directory:
 
-### 4. We have successfully activated our virtual environment! Next, let's install our requirements and the package:
-```
-pip install -r requirements.txt
-pip install --editable .
-```
-
-### 5. There's one last configuration that needs to be done. First, mv to the package directory:
 ```
 cd ~/.autoflow
 ```
@@ -84,7 +59,7 @@ This is to ensure that the `af start` command works properly and starts your pro
 In order to have these instructions again and see the commands you can run, run this command in your terminal: `af --help`.
 This will give you everything you need to start using this package and is similar to the instructions found here. 
 
-## An Example
+## Autoflow in Action
 
 #### 🔥 Command: *af jump*
 
@@ -116,6 +91,11 @@ We used multiple tools to enable unit testing and CI/CD for this project. For te
 GitHub actions allowed us to run multiple builds with multiple operating systems(macOS and Ubuntu) and multiple python versions(3.6, 3.7, 3.8). Once we add support for Windows, we will add that build to our matrix as well. As of right now, every time we push to the main branch of this project or merge something to the main branch, the GitHub actions testing workflow will run. 
 
 We will also be using releases to keep track of our versions. Our version released on November 24th will be version 1. 
+
+## What We Learned
+We learned a lot about subprocesses in Python in order to open shells and navigate to different folders. We also learned about testing with pytest, linting with flake8, and setting up CI/CD with GitHub Actions. Finally, we learned how to build a CLI, publish a Python package, and use the GitHub API. 
+
+In regards to soft skills, we learned about asking for help from mentors rather than trying to solve problems all by ourselves with little success. 
 
 ## Contributing
 Autoflow is fully Open-Source and open for contributions! We request you to respect our contribution guidelines as defined in our [CODE OF CONDUCT](https://github.com/MLH-Fellowship/autoflow/blob/main/CODE_OF_CONDUCT.md) and [CONTRIBUTING GUIDELINES](https://github.com/MLH-Fellowship/autoflow/blob/main/CONTRIBUTING.md).
