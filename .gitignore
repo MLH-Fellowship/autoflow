@@ -1,6 +1,7 @@
 /env
 /.vscode
 /Autoflow.egg-info
+/python_af.egg-info
 
 # for __pycache__
 /*/*/*/__pycache__
